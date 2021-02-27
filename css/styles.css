@@ -38,6 +38,10 @@ body {
   font-family: "Josefin Sans", sans-serif;
 }
 
+body * {
+  transition: all .5s ease;
+}
+
 ol,
 ul,
 li,
@@ -109,6 +113,18 @@ p {
   border-bottom: 1px solid var(--Light_Grayish_Blue) !important;
 }
 
+.theme-toggle .attribution {
+  color: var(--Very_Dark_Blue);
+}
+
+.theme-toggle .toggle .light {
+  display: none;
+}
+
+.theme-toggle .toggle .dark {
+  display: block;
+}
+
 /* ========== End ==============*/
 
 .head::before {
@@ -162,16 +178,12 @@ p {
   cursor: pointer;
 }
 
-.toggle .dark {
-  display: none;
-}
-
-.mode .dark {
+.toggle .light {
   display: block;
-  transition: all 0.5s linear;
 }
 
-.mode .light {
+
+.toggle .dark {
   display: none;
 }
 
@@ -182,7 +194,7 @@ p {
 
 .todo-wrapper .form .form-group .data-entry {
   width: 100%;
-  padding: 1rem 0.5rem 1rem 1rem;
+  padding: 1rem 0.5rem 1rem 2.5rem;
   background: var(--Very_Dark_Desaturated_Blue) !important;
   border: none;
   font-size: 19px;
@@ -204,7 +216,7 @@ p {
 .todo-wrapper .form .form-group .radio {
   position: absolute;
   left: 3%;
-  top: 35%;
+  top: 27%;
 }
 
 /* ========== Todos ============ */
