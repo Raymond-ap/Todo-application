@@ -25,7 +25,7 @@ SECRET_KEY = 'lx5*m=rql%25kk1tah7nl*to$#q7aexfgfvx#%ihl0sj9br3e*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['frontendchallengetodo.herokuapp']
+ALLOWED_HOSTS = ['frontendchallengetodo.herokuapp.com']
 
 
 # Application definition
