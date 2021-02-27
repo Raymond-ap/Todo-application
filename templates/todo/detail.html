@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %}{{todo.title|title}}{% endblock title %}
+ {% block content %}
+<div class="todo-wrapper">
+  <div class="title-bar">
+    <a href="{% url 'todos' %}" class="page-title">todo</a>
+    <div class="toggle">
+      <img
+        data-mode="light"
+        class="theme light"
+        src="{% static './images/icon-sun.svg' %}"
+        alt=""
+      />
+      <img
+        data-mode="dark"
+        class="theme dark"
+        src="{% static './images/icon-moon.svg' %}"
+        alt=""
+      />
+    </div>
+  </div>
+  <form action="" method="POST" class="form">
+  {% csrf_token %}
+  <div class="form-group">
+  {{form.title}}
+  </div>
+  <div class="tsaread form-group" >
+  {{form.description}}
+  </div>
+  <div class="tsaread form-group text-muted">
+  {{form.completed.label}}
+  {{form.completed}}
+  </div>
+    <div class="bottom-flex">
+     <form action="" method="">
+     {% csrf_token %}
+      <a href="" >
+      <button type="submit" name="Update Todo" class="btn btn-submite">Save changes</button>
+      </a>      
+    </div>
+  </form>
+     <form action="" method="POST">
+     {% csrf_token %}
+      <a href="{% url 'delete' todo.slug %}" class="text-center btn btn-danger">
+      Delete
+      </a>      
+    </div>
+  </form>
+</div>
+{% endblock %}

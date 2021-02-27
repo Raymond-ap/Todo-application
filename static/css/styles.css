@@ -54,8 +54,10 @@ p {
 
 /* ================== */
 .main {
-  min-height: 100vh;
-  height: 100%;
+  /* min-height: 100vh;
+  height: 100%; */
+  background: var(--Very_Dark_Blue);
+
 }
 
 .head {
@@ -125,6 +127,12 @@ p {
   display: block;
 }
 
+
+.theme-toggle .todo-wrapper .text-area {
+  background: var(--white) !important;
+  color: #000000;
+}
+
 /* ========== End ==============*/
 
 .head::before {
@@ -168,10 +176,16 @@ p {
   justify-content: space-between;
 }
 
-.title-bar h1 {
+.page-title {
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: 2.1rem;
+  font-weight: 500;
   letter-spacing: 0.3em;
+  color: var(--white);
+}
+
+.page-title:hover {
+  color: var(--white);
 }
 
 .title-bar img {
@@ -194,7 +208,7 @@ p {
 
 .todo-wrapper .form .form-group .data-entry {
   width: 100%;
-  padding: 1rem 0.5rem 1rem 2.5rem;
+  padding: 1rem 0.5rem 1rem 1rem;
   background: var(--Very_Dark_Desaturated_Blue) !important;
   border: none;
   font-size: 19px;
@@ -204,6 +218,58 @@ p {
   -moz-border-radius: 7px 7px 0px 0px;
   -webkit-border-radius: 7px 7px 0px 0px;
   border: 0px solid #000000;
+  -webkit-box-shadow: 0px 3px 5px -2px rgba(54, 50, 54, 1);
+  -moz-box-shadow: 0px 3px 5px -2px rgba(54, 50, 54, 1);
+  box-shadow: 0px 3px 5px -2px rgba(54, 50, 54, 1);
+}
+
+.strike *{
+  color: var(--Dark_Grayish_Blue) !important;
+}
+
+.tsaread {
+  margin-top: 1.5rem;
+}
+
+.form-check {
+  margin-top: 1rem;
+}
+
+.btn-submite {
+  color: var(--white);
+  background:  var(--Bright_Blue);
+  
+}
+
+.btn-danger {
+  margin-left: 0 !important;
+  margin-top: 1rem;
+
+}
+
+@media screen and (max-width: 700px) {
+  .bottom-flex {
+    flex-direction: column;
+  }
+
+  .btn-danger {
+    margin-left: 0 !important;
+    margin-top: .7rem;
+  }
+}
+
+.btn-danger, .btn-submite {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  text-align: center;
+}
+
+.todo-wrapper .text-area {
+  background: var(--Very_Dark_Desaturated_Blue) !important;
+  border: none;
+  font-size: 19px;
+  color: var(--white);
   -webkit-box-shadow: 0px 3px 5px -2px rgba(54, 50, 54, 1);
   -moz-box-shadow: 0px 3px 5px -2px rgba(54, 50, 54, 1);
   box-shadow: 0px 3px 5px -2px rgba(54, 50, 54, 1);
@@ -238,7 +304,6 @@ p {
 .card .title a {
   color: #fff;
   font-size: 18px;
-  margin-left: 1rem;
 }
 
 .card .title a:hover {
@@ -250,6 +315,10 @@ p {
   align-items: center;
   justify-content: space-between;
 }
+.delete svg {
+  pointer-events: none;
+}
+
 
 .delete svg path {
   fill: rgb(255, 255, 255);

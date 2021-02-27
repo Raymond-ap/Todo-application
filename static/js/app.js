@@ -33,3 +33,11 @@ function changeTheme(mode){
     localStorage.setItem('currentTheme', mode)
 }
 
+
+
+// toggleTheme.addEventListener('click', () => {
+//     toggleTheme.classList.toggle('mode')
+//     DOMBody.classList.toggle('theme-toggle')
+//     window.localStorage.toggle = 'theme-toggle'
+// })
+
