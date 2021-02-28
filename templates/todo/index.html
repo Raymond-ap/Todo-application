@@ -27,7 +27,7 @@
   <div class="todos">
   {% for todo in todos %}
     <!-- single todo -->
-    <div {% if todo.completed %}class="card strike" {% else %} class="card" {% endif %}>
+    <div {% if todo.status %}class="card strike" {% else %} class="card" {% endif %}>
       <div class="flex">
         <div class="complete" style="display: flex">
           <!-- <input class="form-check-input radio" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="..."> -->
@@ -59,9 +59,10 @@
         <span>{{todos.count}} items left</span>
       </div>
       <div>
-        <a href="">All</a>
-        <a href="">Active</a>
-        <a href="" name="completed">Completed</a>
+        <a href="{% url 'todos' %}">All</a>
+      {% for completed in status %}
+        <a syle="" href="{% url 'todos' %}?completed={{completed.title}}">{{completed.title}}</a>
+      {% endfor %}
       </div>
       <div>
         <a href="{% url 'clear' %}">Clear Completed</a>

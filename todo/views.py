@@ -2,13 +2,21 @@ from django.contrib import messages
 from django.shortcuts import redirect, render
 
 from .forms import TodoForm
-from .models import Todo
+from .models import Todo, Status
 
 
 def todosPage(request):
     p_address = request.META['REMOTE_ADDR']
-    todos = Todo.objects.all().order_by('-created')
+
+    status = Status.objects.all()
+
     form = TodoForm()
+
+    completed = request.GET.get('completed')
+    if completed:
+        todos = Todo.objects.filter(status=True)
+    else:
+        todos = Todo.objects.all().order_by('-created')
 
     if request.method == 'POST':
         form = TodoForm(request.POST)
@@ -18,7 +26,8 @@ def todosPage(request):
 
     context = {
         'form': form,
-        'todos': todos
+        'todos': todos,
+        'status': status
     }
     return render(request, 'todo/index.html', context)
 
@@ -47,6 +56,6 @@ def deleteTodo(request, slug):
 
 
 def clearCompleted(request):
-    todo = Todo.objects.filter(completed=True)
+    todo = Todo.objects.filter(status=True)
     todo.delete()
     return redirect('todos')

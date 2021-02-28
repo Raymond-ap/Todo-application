@@ -328,6 +328,7 @@ p {
 .bottom-nav span {
   font-size: 15px;
   color: var(--Light_Grayish_Blue);
+  text-transform: capitalize !important;
 }
 
 .bottom-nav span:hover {
