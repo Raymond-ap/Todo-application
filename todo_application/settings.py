@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'lx5*m=rql%25kk1tah7nl*to$#q7aexfgfvx#%ihl0sj9br3e*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = Flase
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['frontendchallengetodo.herokuapp.com']
 
 
 # Application definition
